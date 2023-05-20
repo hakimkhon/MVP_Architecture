@@ -1,19 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.records.RecordsFragment">
 
-    <TextView
-        android:id="@+id/text_game_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Records"
-        android:layout_gravity="center"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/kavivanar"
-        android:textStyle="bold"
-        android:textSize="36sp"/>
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:padding="10sp"
+        android:background="#929C87"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageButton
+            android:id="@+id/icon_back"
+            android:background="#FF929C87"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_left"
+            />
+
+        <TextView
+            android:id="@+id/text_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:text="Main menu"
+            android:layout_gravity="center"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/kavivanar"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_highscore"
+        tools:listitem="@layout/highscore_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

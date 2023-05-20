@@ -5,15 +5,107 @@
     android:layout_height="match_parent"
     tools:context=".screens.gameover.GameOverFragment">
 
-    <TextView
-        android:id="@+id/text_game_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Game Over"
-        android:layout_gravity="center"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/kavivanar"
-        android:textStyle="bold"
-        android:textSize="36sp"/>
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="36sp"
+        android:orientation="vertical">
+        <!--    region title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_moves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Moves: 0"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/kavivanar"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time: 0"
+                android:layout_marginEnd="20sp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/kavivanar"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+        <!--endregion-->
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="140sp"
+            android:src="@drawable/gama_over"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20sp"
+            />
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9775D5"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="24sp"
+            android:text="Restart"
+            android:fontFamily="@font/kavivanar"
+            android:textSize="18sp"
+            />
+        <Button
+            android:id="@+id/btn_hifhscores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9775D5"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="24sp"
+            android:text="Highscores"
+            android:fontFamily="@font/kavivanar"
+            android:textSize="18sp"
+            />
+        <Button
+            android:id="@+id/btn_main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9775D5"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="24sp"
+            android:text="Main menu"
+            android:fontFamily="@font/kavivanar"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9775D5"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="24sp"
+            android:text="Exit"
+            android:fontFamily="@font/kavivanar"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

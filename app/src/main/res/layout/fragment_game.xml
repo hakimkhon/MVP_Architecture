@@ -1,19 +1,441 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".screens.game.GameFragment">
 
-    <TextView
-        android:id="@+id/text_game_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Game"
-        android:layout_gravity="center"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/kavivanar"
-        android:textStyle="bold"
-        android:textSize="36sp"/>
 
-</FrameLayout>
+    <!--    region title-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_game_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Puzzle 15"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/kavivanar"
+            android:textStyle="bold"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hakimkhon"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/kavivanar"
+            android:layout_marginHorizontal="4sp"
+            android:textStyle="bold"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/account_circle"
+            />
+
+    </LinearLayout>
+    <!--endregion-->
+
+    <!--    region about_title-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="12sp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4sp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/back_text_about"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moves:"
+                android:layout_marginHorizontal="4sp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/kavivanar"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shoe_print"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4sp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/back_text_about"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Times:"
+                android:layout_marginHorizontal="4sp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/kavivanar"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/clock"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4sp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/back_text_about"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Best results:"
+                android:layout_marginHorizontal="4sp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/kavivanar"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--    endregion-->
+
+    <!--    region about_result-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="4sp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_move_counter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/kavivanar"
+            />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/kavivanar"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_weight="1.15">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="10sp"
+                android:paddingVertical="2sp"
+                android:orientation="vertical"
+                android:background="@drawable/back_text_best_result">
+
+                <TextView
+                    android:id="@+id/text_best_move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Move: 0"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/kavivanar"
+                    />
+                <TextView
+                    android:id="@+id/text_best_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: 0"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/kavivanar"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--    endregion-->
+
+    <!--    region board-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/back_boadr"
+            android:padding="4sp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/btn_1"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle"/>
+
+            <TextView
+                android:id="@+id/btn_2"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_3"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_4"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_5"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_6"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_7"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_8"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_9"
+                android:layout_row="3"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_10"
+                android:layout_row="3"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_11"
+                android:layout_row="3"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_12"
+                android:layout_row="3"
+                android:layout_rowWeight="1"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_13"
+                android:layout_row="4"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_14"
+                android:layout_row="4"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_15"
+                android:layout_row="4"
+                android:layout_rowWeight="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+
+            <TextView
+                android:id="@+id/btn_16"
+                android:layout_row="4"
+                android:layout_rowWeight="1"
+                android:layout_column="3"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                style="@style/btnStyle" />
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    endregion-->
+
+    <!--    region footer -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12sp"
+            android:background="@drawable/back_footer">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="3sp"
+                android:src="@drawable/arrow_left"
+                android:background="@color/btns_background"
+                />
+
+            <ImageView
+                android:id="@+id/btn_reset"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="3sp"
+                android:src="@drawable/reset"
+                android:background="@color/btns_background"
+                />
+
+            <ImageView
+                android:id="@+id/btn_home"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="3sp"
+                android:src="@drawable/home"
+                android:background="@color/btns_background"
+                />
+
+            <ImageView
+                android:id="@+id/btn_play"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="3sp"
+                android:src="@drawable/play_light"
+                android:background="@color/btns_background"
+                />
+
+            <ImageView
+                android:id="@+id/btn_pause"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="3sp"
+                android:src="@drawable/pause_light"
+                android:background="@color/btns_background"
+                />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <!--    endregion-->
+
+</LinearLayout>
