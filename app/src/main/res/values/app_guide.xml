@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+1. build.gradle file to write
+buildFeatures{
+        viewBinding true
+    }
+2. Fragments create all needs
+3. activity_main.xml update
+<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="uz.hakimkhon.mvp_architecture.screens.home.HomeFragment"
+        app:defaultNavHost="true"
+        />
+3. Nav_graph create
+
+
+
+-->
+
+
+</resources>

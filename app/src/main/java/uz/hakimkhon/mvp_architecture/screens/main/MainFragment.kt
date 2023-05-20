@@ -1,19 +1,19 @@
-package uz.hakimkhon.mvp_architecture.screens.game
+package uz.hakimkhon.mvp_architecture.screens.main
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import uz.hakimkhon.mvp_architecture.R
-import uz.hakimkhon.mvp_architecture.databinding.FragmentGameBinding
+import uz.hakimkhon.mvp_architecture.databinding.FragmentMainBinding
 
-class GameFragment : Fragment(R.layout.fragment_game) {
+class MainFragment : Fragment(R.layout.fragment_main) {
 
-    private var _binding: FragmentGameBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentGameBinding.bind(view)
+        _binding = FragmentMainBinding.bind(view)
     }
 
 
